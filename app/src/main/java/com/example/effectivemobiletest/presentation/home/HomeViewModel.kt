@@ -11,12 +11,13 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    getGreetingUseCase: GetGreetingUseCase
-): ViewModel() {
-    private val _uiState = MutableStateFlow(
-        HomeUiState(
-            greeting = getGreetingUseCase()
+    getGreetingUseCase: GetGreetingUseCase,
+) : ViewModel() {
+    private val _uiState =
+        MutableStateFlow(
+            HomeUiState(
+                greeting = getGreetingUseCase(),
+            ),
         )
-    )
     val uiState: StateFlow<HomeUiState> = _uiState.asStateFlow()
 }

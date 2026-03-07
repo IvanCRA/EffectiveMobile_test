@@ -53,3 +53,5 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version = "12.1.0" }

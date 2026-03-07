@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     id("org.jetbrains.kotlin.kapt")
     alias(libs.plugins.hilt.android)
+    alias(libs.plugins.ktlint)
 }
 
 android {
@@ -25,7 +26,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -41,6 +42,11 @@ android {
 
     kotlinOptions {
         jvmTarget = "17"
+    }
+    ktlint {
+        android.set(true)
+        ignoreFailures.set(false)
+        outputToConsole.set(true)
     }
 }
 

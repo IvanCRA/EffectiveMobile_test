@@ -12,13 +12,13 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @Composable
 fun HomeScreen(
-    viewModel: HomeViewModel = hiltViewModel()
+    viewModel: HomeViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
     Box(
         modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Text(text = uiState.greeting)
     }
