@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.example.effectivemobiletest.presentation.home.HomeScreen
+import com.example.effectivemobiletest.presentation.login.LoginScreen
 import com.example.effectivemobiletest.ui.theme.EffectiveMobileTestTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -15,7 +15,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             EffectiveMobileTestTheme {
-                HomeScreen()
+                LoginScreen(onLoginSuccess = {})
             }
         }
     }
