@@ -1,6 +1,5 @@
 package com.example.effectivemobiletest.ui.theme
 
-import android.view.accessibility.CaptioningManager
 import androidx.compose.ui.graphics.Color
 
 val Purple80 = Color(0xFFD0BCFF)

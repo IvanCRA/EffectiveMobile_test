@@ -58,7 +58,6 @@ val EffectiveMobileTypography =
                 fontSize = 22.sp,
                 lineHeight = 28.sp,
                 fontWeight = FontWeight.Normal,
-
             ),
         titleMedium =
             TextStyle(
@@ -66,7 +65,6 @@ val EffectiveMobileTypography =
                 fontSize = 16.sp,
                 lineHeight = 18.sp,
                 fontWeight = FontWeight.Medium,
-
             ),
         displayMedium =
             TextStyle(
@@ -74,7 +72,6 @@ val EffectiveMobileTypography =
                 fontSize = 14.sp,
                 lineHeight = 20.sp,
                 fontWeight = FontWeight.Medium,
-
             ),
         bodyMedium =
             TextStyle(
@@ -82,7 +79,6 @@ val EffectiveMobileTypography =
                 fontSize = 14.sp,
                 lineHeight = 20.sp,
                 fontWeight = FontWeight.Normal,
-
             ),
         displaySmall =
             TextStyle(
@@ -90,7 +86,6 @@ val EffectiveMobileTypography =
                 fontSize = 12.sp,
                 lineHeight = 15.sp,
                 fontWeight = FontWeight.Normal,
-
             ),
         bodySmall =
             TextStyle(
@@ -99,5 +94,4 @@ val EffectiveMobileTypography =
                 lineHeight = 16.sp,
                 fontWeight = FontWeight.Normal,
             ),
-
     )

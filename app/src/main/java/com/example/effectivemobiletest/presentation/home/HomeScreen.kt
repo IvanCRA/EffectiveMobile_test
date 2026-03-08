@@ -1,6 +1,5 @@
 package com.example.effectivemobiletest.presentation.home
 
-import android.R
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -21,18 +20,18 @@ fun HomeScreen(
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
     Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background),
-
+        modifier =
+            Modifier
+                .fillMaxSize()
+                .background(MaterialTheme.colorScheme.background),
         contentAlignment = Alignment.Center,
     ) {
         Text(
             text = uiState.greeting,
             style =
                 MaterialTheme.typography.headlineLarge.copy(
-                    color = White
-                )
-            )
+                    color = White,
+                ),
+        )
     }
 }
