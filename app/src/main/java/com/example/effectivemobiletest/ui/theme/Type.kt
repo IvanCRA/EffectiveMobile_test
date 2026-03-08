@@ -85,7 +85,7 @@ val EffectiveMobileTypography =
                 fontFamily = Roboto,
                 fontSize = 12.sp,
                 lineHeight = 15.sp,
-                fontWeight = FontWeight.Normal,
+                fontWeight = FontWeight.SemiBold,
             ),
         bodySmall =
             TextStyle(

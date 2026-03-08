@@ -10,25 +10,24 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 
 @Composable
 fun PasswordField(
     value: String,
-    onValueChange: (String) -> Unit
+    onValueChange: (String) -> Unit,
 ) {
-
     Column {
-
         Text(
             text = "Пароль",
             style = MaterialTheme.typography.titleMedium,
@@ -42,21 +41,28 @@ fun PasswordField(
             onValueChange = onValueChange,
             singleLine = true,
             visualTransformation = PasswordVisualTransformation(),
-            textStyle = MaterialTheme.typography.bodyMedium.copy(
-                color = MaterialTheme.colorScheme.onPrimary
-            ),
+            textStyle =
+                MaterialTheme.typography.bodyMedium.copy(
+                    color = MaterialTheme.colorScheme.onPrimary,
+                ),
             cursorBrush = SolidColor(value = MaterialTheme.colorScheme.secondary),
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(40.dp),
+            keyboardOptions =
+                KeyboardOptions(
+                    keyboardType = KeyboardType.Password,
+                ),
+            modifier =
+                Modifier
+                    .fillMaxWidth()
+                    .height(40.dp),
             decorationBox = { innerTextField ->
                 Box(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .clip(RoundedCornerShape(60.dp))
-                        .background(MaterialTheme.colorScheme.primary)
-                        .padding(horizontal = 16.dp),
-                    contentAlignment = Alignment.CenterStart
+                    modifier =
+                        Modifier
+                            .fillMaxSize()
+                            .clip(RoundedCornerShape(60.dp))
+                            .background(MaterialTheme.colorScheme.primary)
+                            .padding(horizontal = 16.dp),
+                    contentAlignment = Alignment.CenterStart,
                 ) {
                     if (value.isEmpty()) {
                         Text(
@@ -68,8 +74,7 @@ fun PasswordField(
 
                     innerTextField()
                 }
-            }
+            },
         )
-
     }
 }
