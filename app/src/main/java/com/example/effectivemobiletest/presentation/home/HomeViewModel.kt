@@ -1,5 +1,7 @@
 package com.example.effectivemobiletest.presentation.home
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.effectivemobiletest.domain.usecase.GetCoursesUseCase
@@ -9,6 +11,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import java.time.LocalDate
 import javax.inject.Inject
 
 @HiltViewModel
@@ -44,5 +47,26 @@ class HomeViewModel @Inject constructor(
                 }
             }
         }
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun onSortByDateClick() {
+        _state.update { current ->
+            val sortedCourses =
+                current.courses.sortedByDescending { course ->
+                    parsePublishDate(course.publishDate)
+                }
+
+            current.copy(
+                courses = sortedCourses,
+                isSortedByDateDesc = true,
+            )
+        }
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun parsePublishDate(date: String): LocalDate {
+        return runCatching { LocalDate.parse(date) }
+            .getOrDefault(LocalDate.MIN)
     }
 }

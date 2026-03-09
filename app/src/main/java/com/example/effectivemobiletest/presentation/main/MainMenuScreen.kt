@@ -1,5 +1,7 @@
 package com.example.effectivemobiletest.presentation.main
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -21,8 +23,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.effectivemobiletest.R
+import com.example.effectivemobiletest.presentation.home.HomeScreen
 import com.example.effectivemobiletest.presentation.navigation.AppDestinations
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun MainMenuScreen() {
     val navController = rememberNavController()
@@ -95,7 +99,7 @@ fun MainMenuScreen() {
             modifier = Modifier.padding(innerPadding),
         ) {
             composable(AppDestinations.Home.route) {
-                HomeTabScreen()
+                HomeScreen()
             }
             composable(AppDestinations.Favorites.route) {
                 FavoritesTabScreen()
