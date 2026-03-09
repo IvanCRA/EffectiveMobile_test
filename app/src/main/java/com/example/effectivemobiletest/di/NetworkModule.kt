@@ -14,7 +14,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
-
     @Provides
     @Singleton
     fun provideLoggingInterceptor(): HttpLoggingInterceptor {
@@ -22,10 +21,11 @@ object NetworkModule {
             level = HttpLoggingInterceptor.Level.BODY
         }
     }
+
     @Provides
     @Singleton
     fun provideOkHttpClient(
-        loggingInterceptor: HttpLoggingInterceptor
+        loggingInterceptor: HttpLoggingInterceptor,
     ): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
@@ -35,7 +35,7 @@ object NetworkModule {
     @Provides
     @Singleton
     fun provideRetrofit(
-        okHttpClient: OkHttpClient
+        okHttpClient: OkHttpClient,
     ): Retrofit {
         return Retrofit.Builder()
             .baseUrl("https://drive.usercontent.google.com/")
@@ -47,9 +47,8 @@ object NetworkModule {
     @Provides
     @Singleton
     fun provideApiService(
-        retrofit: Retrofit
+        retrofit: Retrofit,
     ): ApiService {
         return retrofit.create(ApiService::class.java)
     }
-
 }

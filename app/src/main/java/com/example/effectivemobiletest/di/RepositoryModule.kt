@@ -22,6 +22,6 @@ abstract class RepositoryModule {
     @Binds
     @Singleton
     abstract fun bindCoursesRepository(
-        impl: CoursesRepositoryImpl
+        impl: CoursesRepositoryImpl,
     ): CoursesRepository
 }

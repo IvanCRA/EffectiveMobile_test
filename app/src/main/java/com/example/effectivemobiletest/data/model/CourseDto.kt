@@ -1,6 +1,6 @@
 package com.example.effectivemobiletest.data.model
 
-data class CourseDto (
+data class CourseDto(
     val id: Int,
     val title: String,
     val text: String,

@@ -5,5 +5,5 @@ import com.example.effectivemobiletest.domain.model.Course
 data class HomeUiState(
     val isLoading: Boolean = false,
     val courses: List<Course> = emptyList(),
-    val error: String? = null
+    val error: String? = null,
 )

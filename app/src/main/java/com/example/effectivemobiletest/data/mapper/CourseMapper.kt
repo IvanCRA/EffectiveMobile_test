@@ -3,7 +3,7 @@ package com.example.effectivemobiletest.data.mapper
 import com.example.effectivemobiletest.data.model.CourseDto
 import com.example.effectivemobiletest.domain.model.Course
 
-fun CourseDto.toDomain(): Course{
+fun CourseDto.toDomain(): Course {
     return Course(
         id = id,
         title = title,
@@ -12,6 +12,6 @@ fun CourseDto.toDomain(): Course{
         rate = rate,
         startDate = startDate,
         hasLike = hasLike,
-        publishDate = publishDate
+        publishDate = publishDate,
     )
 }
