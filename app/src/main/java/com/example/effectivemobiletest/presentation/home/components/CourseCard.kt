@@ -4,6 +4,7 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -37,6 +38,7 @@ import com.example.effectivemobiletest.ui.theme.Glass
 @Composable
 fun CourseCard(
     course: Course,
+    onFavoriteClick: (() -> Unit)? = null,
 ) {
     Column(
         modifier =
@@ -74,7 +76,10 @@ fun CourseCard(
                         .align(Alignment.TopEnd)
                         .size(28.dp)
                         .clip(CircleShape)
-                        .background(Glass),
+                        .background(Glass)
+                        .clickable {
+                            onFavoriteClick?.invoke()
+                        },
                 contentAlignment = Alignment.Center,
             ) {
                 Icon(

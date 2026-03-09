@@ -94,7 +94,12 @@ fun HomeScreen(
                     items = state.courses,
                     key = { it.id },
                 ) { course ->
-                    CourseCard(course = course)
+                    CourseCard(
+                        course = course,
+                        onFavoriteClick = {
+                            viewModel.onFavoriteClick(course)
+                        },
+                    )
                 }
             }
         }
