@@ -23,6 +23,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.effectivemobiletest.R
+import com.example.effectivemobiletest.presentation.favorites.FavoritesScreen
 import com.example.effectivemobiletest.presentation.home.HomeScreen
 import com.example.effectivemobiletest.presentation.navigation.AppDestinations
 
@@ -102,7 +103,7 @@ fun MainMenuScreen() {
                 HomeScreen()
             }
             composable(AppDestinations.Favorites.route) {
-                FavoritesTabScreen()
+                FavoritesScreen()
             }
             composable(AppDestinations.Profile.route) {
                 ProfileTabScreen()
