@@ -6,4 +6,5 @@ data class HomeUiState(
     val isLoading: Boolean = false,
     val courses: List<Course> = emptyList(),
     val error: String? = null,
+    val isSortedByDateDesc: Boolean = false,
 )

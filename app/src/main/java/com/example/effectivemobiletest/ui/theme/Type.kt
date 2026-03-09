@@ -94,4 +94,11 @@ val EffectiveMobileTypography =
                 lineHeight = 16.sp,
                 fontWeight = FontWeight.Normal,
             ),
+        labelSmall =
+            TextStyle(
+                fontFamily = Roboto,
+                fontSize = 12.sp,
+                lineHeight = 14.sp,
+                fontWeight = FontWeight.Normal,
+            ),
     )
