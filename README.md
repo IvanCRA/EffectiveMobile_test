@@ -59,15 +59,6 @@
 
 Скриншот экрана и содержимое БД в [pull request](https://github.com/IvanCRA/EffectiveMobile_test/pull/7)
 
-### Социальные кнопки
-
-По нажатию:
-
-- **VK** -> https://vk.com/
-- **OK** -> https://ok.ru/
-
-Открывается браузер.
-
 ---
 
 # Архитектура
